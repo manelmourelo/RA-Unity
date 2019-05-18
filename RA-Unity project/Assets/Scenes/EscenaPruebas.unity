@@ -206,6 +206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51f3152b6c55b546b0b98960b4e37ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!43 &145141455
 Mesh:
   m_ObjectHideFlags: 0
