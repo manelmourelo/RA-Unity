@@ -179,7 +179,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.41926387
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11484642, guid: bad0018eb9256e6409155981dd5af9a2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bad0018eb9256e6409155981dd5af9a2, type: 3}
 --- !u!4 &13282432 stripped
 Transform:
@@ -187,6 +188,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 13282431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &13282433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: bad0018eb9256e6409155981dd5af9a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 13282431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &13282434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13282433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51f3152b6c55b546b0b98960b4e37ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &145141455
 Mesh:
   m_ObjectHideFlags: 0
