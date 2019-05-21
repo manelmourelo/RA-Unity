@@ -6,12 +6,12 @@ public class FireBall : MonoBehaviour
 {
 
     private Vector3 direction;
-    public GameObject image_target = null;
+    public GameObject shoot_dir = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        direction = image_target.transform.position - transform.position;
+        direction = shoot_dir.transform.position - transform.position;
         direction.Normalize();
     }
 

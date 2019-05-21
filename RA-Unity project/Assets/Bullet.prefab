@@ -121,4 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5a319e2ffb6e74789065180a9d85e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image_target: {fileID: 0}
+  shoot_dir: {fileID: 0}
