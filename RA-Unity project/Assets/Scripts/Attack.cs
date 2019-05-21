@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
     public bool under_attack = false;
 
     public GameObject other_player = null;
-    public GameObject shoot_dir = null;
+    public GameObject fireball;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,13 @@ public class Attack : MonoBehaviour
 
         if (timer >= 1.0f)
         {
-            transform.parent.GetComponent<Fire>().Shoot(other_player);
+            if (has_attacked == true)
+            {
+                //transform.parent.GetComponent<Fire>().Shoot(other_player);
+                GameObject new_fireball = Instantiate(fireball, transform.position, transform.rotation) as GameObject;
+                new_fireball.GetComponent<FireBall>().shoot_dir = other_player;
+                new_fireball.GetComponent<FireBall>().RecalculateDirection();
+            }
             gameObject.GetComponent<Animator>().SetBool("Attack", false);
         }
 
