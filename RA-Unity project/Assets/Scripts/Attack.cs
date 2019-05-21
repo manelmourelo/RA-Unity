@@ -5,8 +5,10 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    public LayerMask enemies;
     private float timer = 0.0f;
+    private bool has_attacked = false;
+
+    public bool attacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,19 +19,11 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, enemies) || Input.GetKeyDown(KeyCode.Return))
+        if ((attacking == true && has_attacked == false) || Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
             gameObject.GetComponent<Animator>().SetBool("Attack", true);
             timer = 0.0f;
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Did not Hit");
+            has_attacked = true;
         }
 
         timer += Time.deltaTime;
@@ -40,4 +34,10 @@ public class Attack : MonoBehaviour
         }
 
     }
+    
+    void OnTriggerEnter(Collider other)
+    {
+        attacking = true;
+    }
+
 }
