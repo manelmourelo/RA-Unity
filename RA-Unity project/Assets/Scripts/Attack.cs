@@ -8,6 +8,7 @@ public class Attack : MonoBehaviour
 
     private float timer = 0.0f;
     private bool has_attacked = false;
+    private bool has_shot = false;
 
     public bool attacking = false;
     public bool under_attack = false;
@@ -37,12 +38,13 @@ public class Attack : MonoBehaviour
 
         if (timer >= 1.0f)
         {
-            if (has_attacked == true)
+            if (has_attacked == true && has_shot == false)
             {
                 //transform.parent.GetComponent<Fire>().Shoot(other_player);
                 GameObject new_fireball = Instantiate(fireball, transform.position, transform.rotation) as GameObject;
                 new_fireball.GetComponent<FireBall>().shoot_dir = other_player;
                 new_fireball.GetComponent<FireBall>().RecalculateDirection();
+                has_shot = true;
             }
             gameObject.GetComponent<Animator>().SetBool("Attack", false);
         }
