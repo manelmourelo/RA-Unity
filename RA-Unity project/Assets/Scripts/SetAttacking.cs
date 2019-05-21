@@ -24,7 +24,10 @@ public class SetAttacking : MonoBehaviour
 	void OnTriggerEnter(Collider other)
 	{
         player.GetComponent<Attack>().attacking = true;
-        other_player.GetComponent<Attack>().under_attack = true;
+        if (other_player.GetComponent<Attack>().attacking == false)
+        {
+            other_player.GetComponent<Attack>().under_attack = true;
+        }
     }
 
 }

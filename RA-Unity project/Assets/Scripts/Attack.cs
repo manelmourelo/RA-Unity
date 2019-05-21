@@ -22,11 +22,12 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((attacking == true /*&& has_attacked == false*/)/* && under_attack == false*//* || Input.GetKeyDown(KeyCode.Return)*/)
+        if ((attacking == true && has_attacked == false) && under_attack == false/* || Input.GetKeyDown(KeyCode.Return)*/)
         {
             gameObject.GetComponent<Animator>().SetBool("Attack", true);
             timer = 0.0f;
             has_attacked = true;
+            attacking = false;
         }
 
         timer += Time.deltaTime;
