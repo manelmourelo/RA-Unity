@@ -27,7 +27,7 @@ public class Attack : MonoBehaviour
         if ((attacking == true && has_attacked == false) && under_attack == false || Input.GetKeyDown(KeyCode.Return))
         {
             gameObject.GetComponent<Animator>().SetBool("Attack", true);
-            transform.parent.GetComponent<Fire>().Shoot(shoot_dir);
+            transform.parent.GetComponent<Fire>().Shoot(other_player);
             timer = 0.0f;
             has_attacked = true;
             attacking = false;
