@@ -27,7 +27,7 @@ public class Attack : MonoBehaviour
         {
             gameObject.GetComponent<Animator>().SetBool("Attack", true);
             GameObject new_fireball = Instantiate(fireball, transform.position, transform.rotation) as GameObject;
-            new_fireball.GetComponent<Rigidbody>().AddForce(Vector3.forward * 10.0f);
+            new_fireball.GetComponent<Rigidbody>().AddForce(transform.forward * 10.0f);
             timer = 0.0f;
             has_attacked = true;
             attacking = false;
