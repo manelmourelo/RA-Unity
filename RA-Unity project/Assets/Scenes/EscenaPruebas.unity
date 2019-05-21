@@ -429,7 +429,8 @@ MonoBehaviour:
   attacking: 0
   under_attack: 0
   other_player: {fileID: 2114149785}
-  shoot_dir: {fileID: 1596465255}
+  fireball: {fileID: 9037769027535589756, guid: 80fb2d375ee32a740960640139812a9b,
+    type: 3}
 --- !u!65 &13282436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1989,7 +1990,8 @@ MonoBehaviour:
   attacking: 0
   under_attack: 0
   other_player: {fileID: 13282433}
-  shoot_dir: {fileID: 382842813}
+  fireball: {fileID: 9037769027535589756, guid: 80fb2d375ee32a740960640139812a9b,
+    type: 3}
 --- !u!65 &2114149788
 BoxCollider:
   m_ObjectHideFlags: 0
