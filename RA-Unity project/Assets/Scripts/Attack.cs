@@ -26,7 +26,7 @@ public class Attack : MonoBehaviour
         if ((attacking == true && has_attacked == false) && under_attack == false || Input.GetKeyDown(KeyCode.Return))
         {
             gameObject.GetComponent<Animator>().SetBool("Attack", true);
-            GameObject new_fireball = Instantiate(fireball, transform.position, transform.rotation) as GameObject;
+            GameObject new_fireball = Instantiate(fireball, transform.position, Quaternion.identity) as GameObject;
             new_fireball.GetComponent<Rigidbody>().AddForce(transform.forward * 10.0f);
             timer = 0.0f;
             has_attacked = true;
