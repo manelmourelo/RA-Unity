@@ -9,6 +9,9 @@ public class Attack : MonoBehaviour
     private bool has_attacked = false;
 
     public bool attacking = false;
+    public bool under_attack = false;
+
+    public GameObject other_player = null;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,7 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((attacking == true && has_attacked == false) || Input.GetKeyDown(KeyCode.Return))
+        if ((attacking == true /*&& has_attacked == false*/)/* && under_attack == false*//* || Input.GetKeyDown(KeyCode.Return)*/)
         {
             gameObject.GetComponent<Animator>().SetBool("Attack", true);
             timer = 0.0f;
@@ -35,9 +38,10 @@ public class Attack : MonoBehaviour
 
     }
     
-    void OnTriggerEnter(Collider other)
-    {
-        attacking = true;
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    attacking = true;
+    //    other_player.GetComponent<Attack>().under_attack = true;
+    //}
 
 }

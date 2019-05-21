@@ -427,6 +427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacking: 0
+  under_attack: 0
+  other_player: {fileID: 2114149785}
 --- !u!65 &13282436
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -944,6 +946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 13282433}
+  other_player: {fileID: 2114149785}
 --- !u!21 &1047606553
 Material:
   serializedVersion: 6
@@ -1473,6 +1476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2114149785}
+  other_player: {fileID: 13282433}
 --- !u!1001 &2114149783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1796,6 +1800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacking: 0
+  under_attack: 0
+  other_player: {fileID: 13282433}
 --- !u!65 &2114149788
 BoxCollider:
   m_ObjectHideFlags: 0
