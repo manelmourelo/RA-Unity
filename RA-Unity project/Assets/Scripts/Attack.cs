@@ -27,8 +27,9 @@ public class Attack : MonoBehaviour
         if ((attacking == true && has_attacked == false) && under_attack == false || Input.GetKeyDown(KeyCode.Return))
         {
             gameObject.GetComponent<Animator>().SetBool("Attack", true);
-            GameObject new_fireball = WireframeTrackableEventHandler.Instantiate(fireball, transform.position, Quaternion.identity) as GameObject;
-            new_fireball.GetComponent<Rigidbody>().AddForce(transform.forward * (10.0f*Time.deltaTime), ForceMode.VelocityChange);
+            
+            GameObject new_fireball = WireframeTrackableEventHandler.Instantiate(fireball, transform.parent.position, transform.parent.rotation) as GameObject;
+            new_fireball.GetComponent<Rigidbody>().AddForce(transform.parent.forward * (10.0f*Time.deltaTime), ForceMode.Impulse);
             timer = 0.0f;
             has_attacked = true;
             attacking = false;
