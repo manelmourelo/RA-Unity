@@ -45,6 +45,7 @@ public class Attack : MonoBehaviour
                 new_fireball.GetComponent<FireBall>().shoot_dir = other_player;
                 new_fireball.GetComponent<FireBall>().RecalculateDirection();
                 has_shot = true;
+                other_player.GetComponent<Animator>().SetBool("Die", true);
             }
             gameObject.GetComponent<Animator>().SetBool("Attack", false);
         }
