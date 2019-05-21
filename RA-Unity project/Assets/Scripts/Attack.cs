@@ -16,6 +16,9 @@ public class Attack : MonoBehaviour
     public GameObject other_player = null;
     public GameObject fireball;
 
+    public bool player1 = false;
+    private int score = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,16 +49,44 @@ public class Attack : MonoBehaviour
                 new_fireball.GetComponent<FireBall>().RecalculateDirection();
                 has_shot = true;
                 other_player.GetComponent<Animator>().SetBool("Die", true);
+                score++;
             }
             gameObject.GetComponent<Animator>().SetBool("Attack", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            timer = 0.0f;
+            has_attacked = false;
+            has_shot = false;
+            attacking = false;
+            under_attack = false;
+            gameObject.GetComponent<Animator>().SetBool("Attack", false);
+            gameObject.GetComponent<Animator>().SetBool("Die", false);
+        }
+
     }
-    
+
     //void OnTriggerEnter(Collider other)
     //{
     //    attacking = true;
     //    other_player.GetComponent<Attack>().under_attack = true;
     //}
+
+    private void OnGUI()
+    {
+        GUIStyle myScore = new GUIStyle(GUI.skin.box);
+        myScore.fontSize = 20;
+        if (player1 == true)
+        {
+            GUI.color = Color.blue;
+            GUI.Box(new Rect(460, 720, 100, 30), "Player1: " + score, myScore);
+        }
+        else
+        {
+            GUI.color = Color.red;
+            GUI.Box(new Rect(500, 720, 100, 30), "Player1: " + score, myScore);
+        }
+    }
 
 }
