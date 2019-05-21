@@ -22,7 +22,8 @@ public class Fire : MonoBehaviour
     public void Shoot()
     {
         GameObject new_fireball = Instantiate(fireball, transform.position, transform.rotation) as GameObject;
-        new_fireball.GetComponent<Rigidbody>().AddForce(transform.forward * (10.0f * Time.deltaTime), ForceMode.Impulse);
+        //new_fireball.GetComponent<Rigidbody>().AddForce(transform.forward * (10.0f * Time.deltaTime), ForceMode.Impulse);
+        new_fireball.GetComponent<FireBall>().image_target = gameObject;
     }
 
 }
