@@ -20,4 +20,11 @@ public class FireBall : MonoBehaviour
     {
         transform.Translate(direction * (10.0f*Time.deltaTime), Space.World);
     }
+
+    public void RecalculateDirection()
+    {
+        direction = shoot_dir.transform.position - transform.position;
+        direction.Normalize();
+    }
+
 }
